@@ -1,6 +1,7 @@
 console.log("we are learnign operator");
 
 // Operator is a symbol that is used to perform operations on values. There are many types of operators in JavaScript,
+
 // 1.) Arithmetic Operators
 //  + - * / %  (addition, subtraction, multiplication, division, modulus)
 
