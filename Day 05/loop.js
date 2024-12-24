@@ -6,7 +6,7 @@ console.log("Looping");
 
 // Write a program to print the numbers from 1 to 10 using a for loop.
 
-let i = 1;
+let i = 2;
 
 // while loop exmple
 
