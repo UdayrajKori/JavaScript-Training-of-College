@@ -16,6 +16,8 @@ if (mark >= 80) {
   console.log("Fail");
 }
 
+// switch case for the same problem
+
 switch (mark >= 60 && mark < 80) {
   case mark >= 80:
     console.log("Distinction");

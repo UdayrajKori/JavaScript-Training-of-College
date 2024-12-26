@@ -1,4 +1,5 @@
 // console.log("Else if else statement ");
+
 // else if statement or ladder
 
 let age = 25;
