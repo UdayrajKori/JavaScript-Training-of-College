@@ -33,3 +33,12 @@ console.log(fruits);
 fruits.unshift("Orange"); // this is add element at the beginning of array
 
 console.log(fruits);
+
+let stars = "";
+for (let i = 1; i <= 5; i++) {
+  for (let j = 1; j <= i; j++) {
+    console.log("*");
+    stars = stars + "*";
+  }
+}
+console.log(stars);

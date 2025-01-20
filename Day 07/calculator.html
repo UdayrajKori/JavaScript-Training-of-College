@@ -6,22 +6,32 @@
     <title>Document</title>
   </head>
   <body>
+    <h1>My First Calculator</h1>
     <script>
-      let a = parseInt.prompt("Enter the first number");
-      let b = parseInt.prompt("Enter the second number");
-      let op = prompt("Enter operation now");
+      let a = parseInt(prompt("Enter the first number"));
+      let b = parseInt(prompt("Enter the second number"));
+      let op = window.prompt("Enter operation now");
+
+      document.write(a);
+      document.write(` ${op} `);
+      document.write(b);
+      document.write(" = ");
       switch (op) {
         case "+":
           console.log(a + b);
+          document.write(a + b);
           break;
         case "-":
           console.log(a - b);
+          document.write(a - b);
           break;
         case "*":
           console.log(a * b);
+          document.write(a * b);
           break;
         case "/":
           console.log(a / b);
+          document.write(a / b);
           break;
         default:
           console.log("Invalid input");

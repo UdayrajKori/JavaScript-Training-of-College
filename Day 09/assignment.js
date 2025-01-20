@@ -17,10 +17,3 @@
 // console.log(sum1);
 
 // array methods and properties
-
-const names = ["John", "Mary", "Jane", "Bob"];
-
-console.log(names);
-names.push("Uday");
-
-console.log(names);
