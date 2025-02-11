@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      name="number1"
+      id="fnum"
+      ,
+      placeholder="Enter First number"
+    />
+    <br /><br />
+    <input
+      type="text"
+      name="number2"
+      id="snum"
+      placeholder="Enter Second number"
+    />
+    <br /><br />
+
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+    <button onclick="mul()">x</button>
+    <button onclick="div()">/</button>
+
+    <div id="result"></div>
+
+    <script>
+      let fnum = document.getElementById("fnum");
+      let snum = document.getElementById("snum");
+
+      function add() {
+        let result = parseInt(fnum.value) + parseInt(snum.value);
+        document.getElementById("result").innerHTML = result;
+      }
+
+      function sub() {
+        let result = parseInt(fnum.value) - parseInt(snum.value);
+        document.getElementById("result").innerHTML = result;
+      }
+
+      function mul() {
+        let result = parseInt(fnum.value) * parseInt(snum.value);
+        document.getElementById("result").innerHTML = result;
+      }
+
+      function div() {
+        let result = parseInt(fnum.value) / parseInt(snum.value);
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
