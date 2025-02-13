@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="main.js" defer></script> -->
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="date" name="date" id="date" />
+    <button id="calculate">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+      let date = document.getElementById("date");
+      let calculate = document.getElementById("calculate");
+      let result = document.getElementById("result");
+
+      calculate.addEventListener("click", function () {
+        let dateInput = date.value;
+
+        if (!dateInput) {
+          document.getElementById("result").innerHTML = "Please select a date.";
+          return;
+        }
+
+        let birthDate = new Date(dateInput);
+        let currentDate = new Date();
+
+        let age = currentDate.getFullYear() - birthDate.getFullYear();
+        result.innerHTML = age;
+      });
+    </script>
+  </body>
+</html>
