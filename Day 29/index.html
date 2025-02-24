@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body Styling */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* Container Styling */
+      .container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Heading Styling */
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #2c3e50;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      /* Label Styling */
+      label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      /* Input Styling */
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #333;
+        transition: border-color 0.3s ease;
+      }
+
+      input[type="number"]:focus {
+        border-color: #3498db;
+        outline: none;
+      }
+
+      /* Button Styling */
+      button {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #2980b9;
+      }
+
+      /* Result and Condition Styling */
+      #result,
+      #condition {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 20px;
+        color: #2c3e50;
+      }
+
+      /* BMI Guide Styling */
+      #lessthan,
+      #range,
+      #greater {
+        font-size: 14px;
+        margin: 5px 0;
+        color: #555;
+      }
+
+      #lessthan {
+        color: #e74c3c;
+      }
+
+      #range {
+        color: #27ae60;
+      }
+
+      #greater {
+        color: #f39c12;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 480px) {
+        .container {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 22px;
+        }
+
+        h2 {
+          font-size: 18px;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>BMI Calculator</h1>
+
+    <label for="height">Height in CM:</label>
+    <input type="number" name="height" id="height" />
+    <br /><br />
+
+    <label for="weight">Weight in KG:</label>
+    <input type="number" name="weight" id="weight" />
+    <br /><br />
+
+    <button id="calculate">Calculate</button>
+
+    <p id="result">result</p>
+    <p id="condition">Your condition</p>
+
+    <h2>BMI Weight Giude:</h2>
+    <p id="lessthan">Under Weight = Less than 18.6</p>
+    <p id="range">Normal range = 18.6 and 24.9</p>
+    <p id="greater">Over Height = Greater than 24.9</p>
+
+    <!-- <script src="script.js"></script> -->
+    <script>
+      let height = document.getElementById("height");
+      let weight = document.getElementById("weight");
+      let calculate = document.getElementById("calculate");
+
+      let result = document.getElementById("result");
+
+      calculate.addEventListener("click", function () {
+        let bmi;
+        let h = Number(height.value);
+        let w = Number(weight.value);
+
+        if (h === 0 || h < 0) {
+          result.textContent = `Please enter valid height ${h}`;
+        } else if (w === 0 || w < 0) {
+          result.textContent = `Please enter valid weight ${w}`;
+        } else {
+          bmi = (w / ((h * h) / 10000)).toFixed(2);
+          result.innerHTML = bmi;
+        }
+
+        if (bmi <= 18.5) {
+          document.getElementById("condition").innerHTML = "Underweight";
+        } else if (bmi >= 18.5 && bmi <= 24.9) {
+          document.getElementById("condition").innerHTML = "Normal";
+        } else if (bmi >= 25) {
+          document.getElementById("condition").innerHTML = "Overweight";
+        }
+      });
+    </script>
+  </body>
+</html>
